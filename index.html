@@ -609,6 +609,27 @@ html, body {
     overflow-wrap: break-word;
   }
 }
+  /* Force site elements to never exceed mobile screen width */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* Fix wide table overflow */
+.table-container, table {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Hide oversized star motifs on mobile */
+@media (max-width: 768px) {
+  .star-motif {
+    display: none !important;
+  }
+}
 </style>
   
 
