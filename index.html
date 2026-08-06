@@ -581,38 +581,20 @@
     .contact-grid{grid-template-columns:1fr;}
   }
   @media (max-width: 620px){
-    .course-grid{grid-template-columns:1fr;}
-    .whatsapp-cta{padding:20px 28px; font-size:16px; flex-direction:column; text-align:center;}
-    .price-note{font-size:12.5px;}
-    .float-chip{display:none;}
-    .trial-badge{position:static; display:inline-flex; flex-direction:column; transform:none; margin-bottom:18px; animation:none;}
-  }
+  .course-grid{grid-template-columns:1fr;}
+  .whatsapp-cta{padding:20px 28px; font-size:16px; flex-direction:column; text-align:center;}
+  .price-note{font-size:12.5px;}
+  .float-chip{display:none;}
+  .trial-badge{position:static; display:inline-flex; flex-direction:column; transform:none; margin-bottom:18px; animation:none;}
+}
+
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
 }
 
 :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
 
-/* Clean mobile tweaks without touching desktop layout */
-.table-container, table {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.scroll-hint {
-  font-size: 13px;
-  color: #e0e0e0;
-  text-align: center;
-  margin-top: 10px;
-  display: block;
-}
-
-@media (min-width: 769px) {
-  .scroll-hint {
-    display: none;
-  }
-}
-
+/* Pure mobile-only adjustments (leaves PC completely untouched) */
 @media (max-width: 768px) {
   html, body {
     overflow-x: hidden !important;
@@ -622,45 +604,6 @@
     line-height: 1.3 !important;
     overflow-wrap: break-word !important;
   }
-  .star-motif {
-    display: none !important;
-  }
-}
-
-body {
-  width: 100% !important;
-  max-width: 1200px !important; /* Adjust screen cap width if needed */
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding: 0 !important;
-  overflow-x: hidden !important;
-  box-sizing: border-box;
-}
-
-/* Wide table containment */
-.table-container, table {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* Swipe hint for mobile */
-.scroll-hint {
-  font-size: 13px;
-  color: #e0e0e0;
-  text-align: center;
-  margin-top: 10px;
-  display: block;
-}
-
-/* Hide swipe hint on desktop screens */
-@media (min-width: 768px) {
-  .scroll-hint {
-    display: none;
-  }
-}
-
-/* Prevent overflow on mobile */
-@media (max-width: 768px) {
   .star-motif {
     display: none !important;
   }
