@@ -593,38 +593,44 @@
   }
 :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
 
-/* Fix overflow and mobile title size */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
+/* Center whole site on PC and contain overflow */
+html {
+  display: flex;
+  justify-content: center;
+  background-color: #012a1c;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.5rem;
-    line-height: 1.3;
-    overflow-wrap: break-word;
-  }
-}
-  /* Force site elements to never exceed mobile screen width */
-html, body {
+body {
   width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
+  max-width: 1200px !important;
   margin: 0 auto !important;
   padding: 0 !important;
+  overflow-x: hidden !important;
 }
 
-/* Fix wide table overflow */
+/* Wide table containment */
 .table-container, table {
   max-width: 100% !important;
   box-sizing: border-box !important;
 }
 
-/* Hide oversized star motifs on mobile */
+/* Swipe hint for mobile */
+.scroll-hint {
+  font-size: 13px;
+  color: #e0e0e0;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Hide swipe hint on desktop screens */
+@media (min-width: 768px) {
+  .scroll-hint {
+    display: none;
+  }
+}
+
+/* Prevent overflow on mobile */
 @media (max-width: 768px) {
   .star-motif {
     display: none !important;
