@@ -81,7 +81,7 @@
     --ease: cubic-bezier(.22,1,.36,1);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth; scrollbar-gutter: stable;}
+  html{scroll-behavior:smooth;}
   body{
     font-family:'Inter', sans-serif;
     background: var(--darker-green);
@@ -437,33 +437,6 @@
     border:1px solid var(--glass-border);
     border-radius:26px; padding:10px; box-shadow:var(--shadow-1);
     overflow-x:auto;
-    position:relative;
-  }
-  .swipe-hint{
-    display:none;
-    align-items:center; justify-content:center; gap:8px;
-    font-size:13px; font-weight:600; color:var(--gold);
-    margin-bottom:12px; padding:8px 14px;
-    background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.25);
-    border-radius:999px; width:fit-content; margin-left:auto; margin-right:auto;
-  }
-  .swipe-hint .arrow{ display:inline-block; animation: swipe-move 1.4s ease-in-out infinite; }
-  @keyframes swipe-move{
-    0%,100%{ transform:translateX(0); opacity:1; }
-    50%{ transform:translateX(6px); opacity:0.5; }
-  }
-  .scroll-fade{
-    display:none;
-    position:absolute; top:10px; bottom:10px; width:36px;
-    pointer-events:none; z-index:5; border-radius:0 26px 26px 0;
-  }
-  .scroll-fade.right{
-    right:0;
-    background:linear-gradient(90deg, transparent, var(--darker-green) 92%);
-  }
-  @media(max-width:768px){
-    .swipe-hint{ display:inline-flex; }
-    .scroll-fade{ display:block; }
   }
   table.price-table{
     width:100%; border-collapse:separate; border-spacing:0; min-width:850px;
@@ -758,9 +731,7 @@
       <h2>Monthly Fees by <span>Region</span></h2>
       <p>Choose the plan that fits your schedule. All plans include a free 5-day trial before you commit.</p>
     </div>
-    <div class="swipe-hint">Swipe to see all countries <span class="arrow">👉</span></div>
     <div class="pricing-wrap">
-      <div class="scroll-fade right"></div>
       <table class="price-table">
         <thead>
           <tr>
@@ -1048,18 +1019,6 @@
     reviewForm.addEventListener("submit", submitReview);
   }
   window.addEventListener("DOMContentLoaded", loadApprovedReviews);
-
-  // Hide the pricing-table swipe hint once the user has scrolled it
-  const pricingWrap = document.querySelector('.pricing-wrap');
-  const swipeHint = document.querySelector('.swipe-hint');
-  const scrollFade = document.querySelector('.scroll-fade.right');
-  if (pricingWrap) {
-    pricingWrap.addEventListener('scroll', () => {
-      const atEnd = pricingWrap.scrollLeft + pricingWrap.clientWidth >= pricingWrap.scrollWidth - 4;
-      if (swipeHint) swipeHint.style.opacity = pricingWrap.scrollLeft > 10 ? '0' : '1';
-      if (scrollFade) scrollFade.style.opacity = atEnd ? '0' : '1';
-    }, { passive: true });
-  }
 </script>
 
 </body>
