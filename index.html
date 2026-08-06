@@ -591,9 +591,9 @@
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
   }
+:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
 
-  :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
-  /* Fix right-side shift caused by star-motif elements */
+/* Fix overflow and mobile title size */
 html, body {
   width: 100%;
   max-width: 100%;
@@ -609,8 +609,10 @@ html, body {
     overflow-wrap: break-word;
   }
 }
-</head>
-<body>
+</style>
+  
+
+  
 
 <div class="bg-pattern"></div>
 <div class="star-motif" style="top:-200px; right:-200px;"></div>
