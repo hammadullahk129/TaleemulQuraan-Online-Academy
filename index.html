@@ -594,18 +594,22 @@
 :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
 
 /* Center whole site on PC and contain overflow */
+/* Center whole site on PC cleanly */
 html {
-  display: flex;
-  justify-content: center;
-  background-color: #012a1c;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #012a1c; /* Matches dark background */
 }
 
 body {
   width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
+  max-width: 1200px !important; /* Adjust screen cap width if needed */
+  margin-left: auto !important;
+  margin-right: auto !important;
   padding: 0 !important;
   overflow-x: hidden !important;
+  box-sizing: border-box;
 }
 
 /* Wide table containment */
